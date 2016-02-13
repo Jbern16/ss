@@ -18,6 +18,12 @@ class BubbleSortTest < Minitest::Test
     assert_equal ["A", "B", "C", "D", "E"], bs.bubble_sort(["E", "D", "C", "B", "A"])
   end
 
+  def test_check_if_bubble_sort_returns_argument_errorw_on_mixed_array_strings_and_integers
+    skip
+    assert_equal nil, bs.bubble_sort([1,3,"a","b",7,"e"])
+  end
+
+
 
 
 
