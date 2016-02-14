@@ -18,10 +18,20 @@ class BubbleSortTest < Minitest::Test
     assert_equal ["A", "B", "C", "D", "E"], bs.bubble_sort(["E", "D", "C", "B", "A"])
   end
 
-  def test_check_if_bubble_sort_returns_argument_errorw_on_mixed_array_strings_and_integers
-    skip
-    assert_equal nil, bs.bubble_sort([1,3,"a","b",7,"e"])
+  def test_sort_with_empty_array
+    assert_equal [], bs.bubble_sort([])
   end
+
+  def test_sort_with_one_number
+    assert_equal [1], bs.bubble_sort([1])
+  end
+
+  def test_sort_with_reversed_alphabet
+    ordered_alpabet = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+    reversed_alphabet = %w(z y x w v u t s r q p o n m l k j i h g f e d c b a)
+    assert_equal ordered_alpabet , bs.bubble_sort(reversed_alphabet)
+  end
+
 
 
 

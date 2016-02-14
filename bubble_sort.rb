@@ -25,14 +25,3 @@ class BubbleSort
     end
   end
 end
-
-#   def validate_array(array)
-#     if array.all?{ |number| Fixnum.include?(number)}
-#       true
-#     elsif array.all?{|letter| String.include?(letter)}
-#       true
-#     else
-#       raise ArgumentError.new("Invalid Array")
-#     end
-#   end
-# end

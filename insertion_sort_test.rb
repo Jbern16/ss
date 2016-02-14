@@ -18,4 +18,18 @@ class InsertionSortTest < Minitest::Test
     assert_equal ["A", "B", "C", "D", "E"], is.insertion_sort(["E", "D", "C", "B", "A"])
   end
 
+  def test_sort_with_empty_array
+    assert_equal [], is.insertion_sort([])
+  end
+
+  def test_sort_with_one_number
+    assert_equal [1], is.insertion_sort([1])
+  end
+
+  def test_sort_with_reversed_alphabet
+    ordered_alpabet = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+    reversed_alphabet = %w(z y x w v u t s r q p o n m l k j i h g f e d c b a)
+    assert_equal ordered_alpabet , is.insertion_sort(reversed_alphabet)
+  end
+
 end
