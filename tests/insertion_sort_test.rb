@@ -1,13 +1,13 @@
 gem 'minitest', '>= 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'insertion_sort'
+require_relative '../lib/insertion_sort_in_place'
 
 class InsertionSortTest < Minitest::Test
   attr_accessor :is
 
   def setup
-    @is = InsertionSort.new
+    @is = InsertionSortInPlace.new
   end
 
   def test_check_if_insertion_sort_works_on_simple_array_nums
@@ -36,6 +36,11 @@ class InsertionSortTest < Minitest::Test
     number_array = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
     ordered_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     assert_equal ordered_array, is.insertion_sort(number_array)
+  end
+
+  def test_sort_with_already_sorted_array
+    number_array = [1,2,3,4,5,6,7,8]
+    assert_equal number_array, is.insertion_sort(number_array)
   end
 
 end

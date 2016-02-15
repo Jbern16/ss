@@ -1,7 +1,7 @@
 gem 'minitest', '>= 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'bubble_sort'
+require_relative '../lib/bubble_sort'
 
 class BubbleSortTest < Minitest::Test
   attr_accessor :bs
@@ -36,6 +36,11 @@ class BubbleSortTest < Minitest::Test
     number_array = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
     ordered_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     assert_equal ordered_array, bs.bubble_sort(number_array)
+  end
+
+  def test_sort_with_already_sorted_array
+    number_array = [1,2,3,4,5,6,7,8]
+    assert_equal number_array, bs.bubble_sort(number_array)
   end
 
 

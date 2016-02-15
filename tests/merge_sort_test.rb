@@ -1,7 +1,7 @@
 gem 'minitest', '>= 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'merge_sort'
+require_relative '../lib/merge_sort'
 
 class MergeSortTest < Minitest::Test
   attr_accessor :ms
@@ -38,6 +38,10 @@ class MergeSortTest < Minitest::Test
     assert_equal ordered_array, ms.merge_sort(number_array)
   end
 
+  def test_sort_with_already_sorted_array
+    number_array = [1,2,3,4,5,6,7,8]
+    assert_equal number_array, ms.merge_sort(number_array)
+  end
 
 
 
